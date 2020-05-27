@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  stages {
+  stages [
     stage('stage1') {
       steps {
         echo 'this build number $BUILD_NUMBER with demo $Demo'
@@ -8,13 +8,14 @@ pipeline {
       }
     },
 
-      stage('step2') {
-          withMaven(maven: 'mvn') {
-             sh "mvn clean package"
+     stage('stage2') {
+          steps {
+            echo 'this build number $BUILD_NUMBER with demo $Demo'
+            sh 'echo "this build number $BUILD_NUMBER with demo $Demo"'
           }
         }
 
-  }
+  ]
   environment {
     Demo = '2'
   }
