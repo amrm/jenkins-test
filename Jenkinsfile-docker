@@ -12,7 +12,7 @@ pipeline {
             stage ('Build Docker Image') {
               steps {
                     echo "Start Build Docker Image"
-                    sh 'cd jenkins-test/'
+                    sh 'ls'
                     sh 'docker images -a'
                     sh 'docker build -t abdeldayem/jenkinstest:0.0.1.Release .'
                     sh 'docker images -a'
