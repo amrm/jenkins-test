@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-         PATH = "/usr/share/maven/bin"
+         PATH = "/opt/maven/bin"
       }
     stages {
         stage ('Compile Stage') {
@@ -21,7 +21,7 @@ pipeline {
         stage ('Install Stage') {
             steps {
                     sh 'mvn install'
-                
+
             }
         }
     }
