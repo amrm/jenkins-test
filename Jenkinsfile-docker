@@ -12,8 +12,8 @@ pipeline {
             stage ('Build Docker Image') {
               steps {
                     echo "Start Build Docker Image"
-                    powershell('docker images -a')
-                    powershell('docker build -t abdeldayem/jenkinsTest:0.0.1.Release .')
+                    sh 'docker images -a'
+                    sh 'docker build -t abdeldayem/jenkinsTest:0.0.1.Release .'
                }
          }
     }
