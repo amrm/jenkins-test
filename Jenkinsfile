@@ -4,7 +4,7 @@ pipeline {
     stage('stage1') {
       steps {
         echo 'this build number $BUILD_NUMBER with demo $Demo'
-          sh 'mvn clean install'
+           sh 'mvn test'
         sh 'echo "this build number $BUILD_NUMBER with demo $Demo"'
       }
     }
