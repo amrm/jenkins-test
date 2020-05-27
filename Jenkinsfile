@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  environment {
+     Demo = '2'
+  }
   stages {
     stage('hello') {
       steps {
@@ -11,7 +14,6 @@ pipeline {
     stage('clean') {
       steps {
         sh ' echo "clean ..." '
-        mavenSnapshotCheck(check: true)
       }
     }
 
@@ -28,7 +30,5 @@ pipeline {
     }
 
   }
-  environment {
-    Demo = '2'
-  }
+
 }
