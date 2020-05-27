@@ -12,21 +12,18 @@ pipeline {
           steps {
             sh ' echo "clean ..." '
 
-            #sh ' mvn clean '
           }
         }
 
          stage('install') {
                   steps {
                     sh ' echo "install ..." '
-                    #sh ' mvn install '
                   }
                 }
 
                  stage('Build') {
                                   steps {
                                     sh ' echo "Build ..." '
-                                    #sh ' mvn build '
                                   }
                                 }
 }
