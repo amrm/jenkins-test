@@ -14,6 +14,14 @@ pipeline {
 
     }
 
+    stages {
+            stage ('Test Stage') {
+                steps {
+                        sh "mvn test"
+                }
+            }
+        }
+
     post{
         always{
             cleanWs()

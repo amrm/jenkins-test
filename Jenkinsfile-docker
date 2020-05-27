@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+            stage ('Verify Branch') {
+                steps {
+                      echo "$GIT_BRANCH"
+                }
+            }
+    }
+
+    stages {
+           stage ('Build Docker Image') {
+               steps {
+                     echo "Start Build Docker Image"
+                     pwsh(script: 'docker images -a')
+                     pwsh(script: 'docker build -t abdeldayem/jenkinsTest:0.0.1.Release .')
+               }
+           }
+     }
+
+}
+
