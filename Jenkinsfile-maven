@@ -1,11 +1,10 @@
 pipeline {
     agent any
-    tools{
+    tools {
         maven "3.6.3"
     }
     stages {
         stage ('Compile Stage') {
-
             steps {
                     sh "mvn -v"
                     sh "mvn clean install"
