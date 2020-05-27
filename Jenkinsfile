@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  tools {
-          maven 'Maven 3.3.9'
-      }
   stages {
     stage('hello') {
       steps {
@@ -14,21 +11,22 @@ pipeline {
      stage('clean') {
           steps {
             sh ' echo "clean ..." '
-            sh ' mvn clean '
+
+            #sh ' mvn clean '
           }
         }
 
          stage('install') {
                   steps {
                     sh ' echo "install ..." '
-                    sh ' mvn install '
+                    #sh ' mvn install '
                   }
                 }
 
                  stage('Build') {
                                   steps {
                                     sh ' echo "Build ..." '
-                                    sh ' mvn build '
+                                    #sh ' mvn build '
                                   }
                                 }
 }
