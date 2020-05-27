@@ -1,21 +1,27 @@
 pipeline {
     agent any
-    tools {
-        type: 'maven'
-    }
     stages {
-        stage ('Initialize') {
+        stage ('Compile Stage') {
+
             steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                '''
+                withMaven(maven : 'apache-maven-3.6.1') {
+                    bat 'mvn clean compile'
+                }
             }
         }
+        stage ('Testing Stage') {
 
-        stage ('Build') {
             steps {
-                echo 'This is a minimal pipeline.'
+                withMaven(maven : 'apache-maven-3.6.1') {
+                    bat 'mvn test'
+                }
+            }
+        }
+        stage ('Install Stage') {
+            steps {
+                withMaven(maven : 'apache-maven-3.6.1') {
+                    bat 'mvn install'
+                }
             }
         }
     }
