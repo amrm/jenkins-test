@@ -12,10 +12,10 @@ COPY ./ ./
 FROM openjdk:8-jre-alpine3.9
 
 # copy only the artifacts we need from the first stage and discard the rest
-COPY --from=MAVEN_BUILD /target/jenkins-test.jar /jenkinsTest.jar
+COPY --from=MAVEN_BUILD /target/jenkins-test.jar /jenkinstest.jar
 
 # set the startup command to execute the jar
-CMD ["java", "-jar", "/jenkinsTest.jar"]
+CMD ["java", "-jar", "/jenkinstest.jar"]
 
 # docker build -t abdeldayem/aws-kbs-test:0.0.1.Release .
 # docker push abdeldayem/aws-kbs-test:0.0.1.Release

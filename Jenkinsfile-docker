@@ -13,7 +13,7 @@ pipeline {
               steps {
                     echo "Start Build Docker Image"
                     sh 'docker images -a'
-                    sh 'docker build -t abdeldayem/jenkinsTest:0.0.1.Release .'
+                    sh 'docker build -t abdeldayem/jenkinstest:0.0.1.Release .'
                }
          }
     }
