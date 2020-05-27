@@ -17,7 +17,7 @@ COPY --from=MAVEN_BUILD /target/jenkins-test.jar /jenkinstest.jar
 # set the startup command to execute the jar
 CMD ["java", "-jar", "/jenkinstest.jar"]
 
-# docker build -t abdeldayem/aws-kbs-test:0.0.1.Release .
+# docker build -t abdeldayem/jenkinstest:0.0.1.Release .
 # docker push abdeldayem/aws-kbs-test:0.0.1.Release
 
 # docker login
